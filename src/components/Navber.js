@@ -12,7 +12,7 @@ const Navigation = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <button className="btnn btn btn-primary mx-4"><Link className="text-link" to="/home">Home</Link></button>
-                            <button className="btnn btn btn-primary"><Link className="text-link" to="/home">Sign In</Link></button>
+                            <button onClick={()=>alert("sign-in button not available write now !!")} className="btnn btn btn-primary"><Link className="text-link" to="/home">Sign In</Link></button>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
