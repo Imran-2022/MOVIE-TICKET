@@ -1,8 +1,19 @@
 import React from 'react';
+import Main from './pages';
+import {Switch,Route} from "react-router-dom";
+import { NotFound } from 'http-errors';
+import MovieDetails from './components/Home/MovieDetails';
+import Navigation from './components/Navber';
 function App() {
   return (
     <>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae aperiam laborum sunt consequuntur nobis illo ad labore ratione placeat? Quod minus eos, ex necessitatibus vero voluptate ipsum dignissimos odio ad?</p>
+     <Navigation />
+    <Switch>
+      <Route exact path="/" component={Main}/>
+      <Route  path="/home" component={Main}/>
+      <Route  path="/movieDetails/:idd" component={MovieDetails}/>
+      <Route  path="*" component={NotFound}/>
+    </Switch>
     </>
   );
 }

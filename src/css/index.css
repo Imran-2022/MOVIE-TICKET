@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -17,4 +18,67 @@
 }
 html {
   scroll-behavior: smooth;
+}
+
+
+
+/* rid of underline for Link component of React Router? */
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+.text-link:hover{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/* navbar button hover outline none */
+.btnn:hover{
+    outline: none !important;
+}
+
+
+/*main  */
+.main{
+    width: 100%;
+
+}
+.main-in{
+    width: 90%;
+    min-height: 90vh;
+    margin: auto;
+}
+/* navigation */
+.navigation{
+    width: 90%;
+    margin: auto;
+}
+
+/* homeData */
+.homedata-in{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.homedata{
+    width: 350px;
+    box-shadow: 0 2px 3px 5px rgb(226 207 207 / 75%);
+    background-color: #3498db;
+    margin: 20px
+}
+.h-25{
+    max-height: 340px;
+}
+/* header */
+.header{
+    min-height:25vh;
+    background-position: 100% 100%!important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
