@@ -12,7 +12,7 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
     overlay: {
-        background: "rgb(255, 255, 0,.7)",
+        background: "rgb(123 119 155 / 75%)",
       }
 };
 Modal.setAppElement('#root');
@@ -35,7 +35,7 @@ const ModalForm = ({ modalIsOpen, closeModal,movie,schedule }) => {
                     <input defaultValue="price $" {...register("exampleRequiredd", { required: true })} readOnly/>
                     {errors.exampleRequired && <p>This field is required</p>}
                     <div className="text-center">
-                    <input className="btn btn-danger w-100 p-3" type="submit" value="Check Out" />
+                    <input className="btn btn-danger w-100 px-3" type="submit" id='ii' value="Check Out" />
                     </div>
                 </form>
             </Modal>

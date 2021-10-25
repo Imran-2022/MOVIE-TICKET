@@ -8,7 +8,18 @@ form {
     min-width: 650px;
     margin: 0 auto;
   }
-  
+@media (max-width: 770px) {
+  form {
+    min-width: 350px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 470px) {
+  form {
+    min-width: 200px;
+    margin: 0 auto;
+  }
+}
   input {
     display: block;
     box-sizing: border-box;

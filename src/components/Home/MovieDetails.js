@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import ModalForm from './ModalForm';
-
+import { MdFlightTakeoff } from "react-icons/md";
 const MovieDetails = () => {
     const { idd } = useParams()
     const [movie, setMovie] = useState([])
@@ -22,7 +22,7 @@ const MovieDetails = () => {
         setIsOpen(false);
     }
     return (
-        <div className="movieDetails">
+        <div className="movieDetails mt-3">
             <div className="movieDetails-in">
                 {
                     movie.map(mv => {
@@ -39,8 +39,8 @@ const MovieDetails = () => {
 
                                     <h4>schedule - {mv.show?.schedule?.days[0]}</h4>
                                 </div>
-                                <h6 className="p-3"> Summary - {mv.show.summary}</h6>
-                                <button onClick={() => setIsOpen(true)} className="btn btn-primary w-100 mx-3">Buy Ticket Now</button>
+                                <h6 className="py-2"> Summary - {mv.show.summary}</h6>
+                                <button onClick={() => setIsOpen(true)} className="btn btn-primary w-100">Buy Ticket Now <MdFlightTakeoff /></button>
                                 <ModalForm modalIsOpen={modalIsOpen} movie={mv.show.name} schedule={mv.show?.schedule?.days[0]} closeModal={closeModal} />
                             </div>
                         )
