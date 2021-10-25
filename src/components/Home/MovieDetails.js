@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import ModalForm from './ModalForm';
 
 const MovieDetails = () => {
     const {idd}=useParams()
@@ -14,6 +15,12 @@ const MovieDetails = () => {
             setMovie(movie)
         })
     },[])
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+  
+    function closeModal() {
+      setIsOpen(false);
+    }
     return (
         <div>
             <div>
@@ -22,14 +29,20 @@ const MovieDetails = () => {
                       return (
                           <>
                           <img  src={mv.show.image.medium} alt="" />
-                          <h2>{mv.show.name}</h2>
-                          <h6>{mv.show.summary}</h6>
-                          <button className="btn btn-primary w-50"><Link className="text-link" to={`/movieDetails/${idd}`}>Buy Ticket Now</Link></button>
+                          <h3> Movie - {mv.show.name}</h3>
+                          <h4>Language - {mv.show.language}</h4>
+                          <h4>Type - {mv.show.type}</h4>
+                          <h4>Weight - {mv.show.weight}</h4>
+                          <h4>schedule - {mv.show?.schedule?.days[0]}</h4>
+                          <h6> Summary - {mv.show.summary}</h6>
+                          <button onClick={()=>setIsOpen(true)} className="btn btn-primary w-50">Buy Ticket Now</button>
+                          <ModalForm modalIsOpen={modalIsOpen} movie={mv.show.name} schedule={mv.show?.schedule?.days[0]} closeModal={closeModal}/>
                           </>
                       )
                   })
                 }
             </div>
+            
         </div>
     );
 };
