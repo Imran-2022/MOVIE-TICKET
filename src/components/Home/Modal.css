@@ -1,4 +1,10 @@
-    form {
+/* body {
+  position: fixed;
+  inset: 0px;
+  background-color: rgb(61 34 34 / 75%);
+} */
+
+form {
     min-width: 650px;
     margin: 0 auto;
   }

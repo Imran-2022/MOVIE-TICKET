@@ -11,6 +11,9 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
     },
+    overlay: {
+        background: "rgb(255, 255, 0,.7)",
+      }
 };
 Modal.setAppElement('#root');
 const ModalForm = ({ modalIsOpen, closeModal,movie,schedule }) => {
