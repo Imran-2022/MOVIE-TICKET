@@ -28,20 +28,22 @@ const MovieDetails = () => {
                     movie.map(mv => {
                         return (
                             <div className="movieDetailss-inn">
-                                <img className="detailsImg" src={mv.show.image.medium} alt="" />
-                                <div className="df">
-                                    <h3> Movie - {mv.show.name}</h3>
-                                    <h4>Type - {mv.show.type}</h4>
-
+                                <div className="imgdiv">
+                                    <img className="detailsImg" src={mv.show.image.medium} alt="" />
                                 </div>
-                                <div className="df">
-                                    <h4>Language - {mv.show.language}</h4>
-
-                                    <h4>schedule - {mv.show?.schedule?.days[0]}</h4>
+                                <div className="details">                                  
+                                        <h3> Movie - {mv.show?.name}</h3>
+                                        <h4>Type - {mv.show?.type}</h4>
+                                        <h4>Language - {mv.show?.language}</h4>
+                                        <h4>runtime - {mv.show?.runtime}</h4>
+                                        <h4>schedule - {mv.show?.schedule?.days[0]}</h4>
+                                        <h4>time - {mv.show?.schedule?.time}</h4>
+                                        <h4>rating - {mv.show?.rating?.average}</h4>
+                                        <h4>officialSite - {mv.show?.officialSite}</h4>
+                                    <h6 className="py-2"> Summary - {mv.show.summary}</h6>
+                                    <button onClick={() => setIsOpen(true)} className="btn btn-primary w-100">Buy Ticket Now <MdFlightTakeoff /></button>
+                                    <ModalForm modalIsOpen={modalIsOpen} movie={mv.show.name} schedule={mv.show?.schedule?.days[0]} time={mv.show?.schedule?.time} closeModal={closeModal} />
                                 </div>
-                                <h6 className="py-2"> Summary - {mv.show.summary}</h6>
-                                <button onClick={() => setIsOpen(true)} className="btn btn-primary w-100">Buy Ticket Now <MdFlightTakeoff /></button>
-                                <ModalForm modalIsOpen={modalIsOpen} movie={mv.show.name} schedule={mv.show?.schedule?.days[0]} closeModal={closeModal} />
                             </div>
                         )
                     })

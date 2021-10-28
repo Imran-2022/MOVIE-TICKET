@@ -16,7 +16,7 @@ const customStyles = {
       }
 };
 Modal.setAppElement('#root');
-const ModalForm = ({ modalIsOpen, closeModal,movie,schedule }) => {
+const ModalForm = ({ modalIsOpen, closeModal,movie,schedule,time }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     return (
@@ -32,6 +32,7 @@ const ModalForm = ({ modalIsOpen, closeModal,movie,schedule }) => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="mb-3" defaultValue={`movie - ${movie}`}{...register("example", { required: true })} readOnly/>
                     <input defaultValue={`schedule Date - ${schedule}`} {...register("exampleRequired", { required: true })} readOnly />
+                    <input defaultValue={`schedule Time - ${time}`} {...register("exampleRequire", { required: true })} readOnly />
                     <input defaultValue="price $" {...register("exampleRequiredd", { required: true })} readOnly/>
                     {errors.exampleRequired && <p>This field is required</p>}
                     <div className="text-center">
